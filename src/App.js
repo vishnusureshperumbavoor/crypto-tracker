@@ -4,10 +4,10 @@ import {
   Route
 } from "react-router-dom";
 import './App.css'
-import Header from './Components/Header';
 import HomePage from './Pages/HomePage';
 import CoinPage from './Pages/CoinPage';
 import {makeStyles} from '@material-ui/core'
+import Header from "./Header/Header";
 function App() {
   const useStyles = makeStyles(()=>({
     App:{
@@ -23,7 +23,7 @@ function App() {
         <Header/>
         <Routes>
           <Route path="/" element={<HomePage/>} exact />
-          <Route path="/coin" element={<CoinPage/>} />  
+          <Route path="/coins/:id" element={<CoinPage/>} />  
         </Routes>
       </div> 
     </Router>

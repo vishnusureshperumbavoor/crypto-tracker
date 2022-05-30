@@ -67,8 +67,11 @@ function Carousel() {
   }
 
   return (
-    <div className={classes.Carousel}> <AliceCarousel mouseTracking infinite autoPlayInterval={1000} animationDuration={1500} 
-    disableDotsControls responsive={responsive} autoPlay items={items} /> </div>
+    <div className={classes.Carousel}> 
+    <AliceCarousel 
+    mouseTracking infinite autoPlayInterval={1000} animationDuration={1500} 
+    disableDotsControls responsive={responsive} autoPlay items={items} /> 
+    </div>
   )
 }
 

@@ -4,7 +4,7 @@ import axios from 'axios';
 import { CryptoState } from '../CryptoContext';
 import { ThemeProvider,createTheme, Container, Typography, TextField, TableContainer, LinearProgress, Table, TableHead, TableRow, TableCell, TableBody, makeStyles } from '@material-ui/core';
 import { useNavigate } from 'react-router-dom';
-import { numberWithCommas } from '../Banner/Carousel';
+import { numberWithCommas } from '../HomePage/Carousel';
 import { Pagination } from '@material-ui/lab';
 const darkTheme = createTheme({
     palette: {
@@ -13,8 +13,7 @@ const darkTheme = createTheme({
         },
       type: 'dark',
     }
-});
- 
+}); 
 function CoinsTable() {
     const [coins,setCoins] = useState([]);
     const [loading,setLoading] = useState(false);
@@ -35,11 +34,9 @@ function CoinsTable() {
     const handleSearch=()=>{
         return coins.filter((coin)=>(
             coin.name.toLowerCase().includes(search) || 
-            coin.symbol.toLowerCase().includes(search)
-            
+            coin.symbol.toLowerCase().includes(search)            
         ))
-    }
-    
+    }    
     const useStyles = makeStyles(()=>({
         row:{
             backgroundColor:"#16171a",
@@ -77,7 +74,8 @@ function CoinsTable() {
                         <Table>
                             <TableHead style={{backgroundColor:"#EEBC1D"}} >
                                 <TableRow>
-                                    {["Coin","Price","24h Change","Market Cap"].map((head)=>(
+                                    {
+                                        ["Coin","Price","24h Change","Market Cap"].map((head)=>(
                                         <TableCell style={{
                                             color:"black",fontWeight:"700",fontFamily:"MontSerrat"
                                         }}
@@ -85,7 +83,8 @@ function CoinsTable() {
                                         >
                                             {head}
                                         </TableCell>
-                                    ))}
+                                        ))
+                                    }
                                 </TableRow>
                             </TableHead>
                             <TableBody>
@@ -94,7 +93,7 @@ function CoinsTable() {
                                 .map((row)=>{
                                     const profit = row.price_change_percentage_24h > 0;
                                     return(
-                                        <TableRow onClick={()=>navigate(`/coin/${row.id}`)}
+                                        <TableRow onClick={()=>navigate(`/coins/${row.id}`)}
                                             className={classes.row}
                                             key={row.name}>
                                                 <TableCell component='th' scope='row'

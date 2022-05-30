@@ -1,6 +1,6 @@
 import React from 'react'
 import { makeStyles ,Container, Typography } from '@material-ui/core'
-import Carousel from './Carousel'
+import Carousel from '../HomePage/Carousel'
 const useStyles = makeStyles(()=>({
     banner:{
         backgroundImage:"url(./banner2.jpg)"
@@ -28,10 +28,10 @@ function Banner() {
             <div className={classes.tagline}>
             <Typography  className={classes.title} variant='h2' style={{fontWeight:"bold",marginBottom:15,fontFamily:"Montserrat"}} >
                       Crypto VSP
-                  </Typography>
-        <Typography  className={classes.title} variant='h6' style={{color:"darkgrey",textTransform:"capitalize",fontFamily:"Montserrat"}}>
+            </Typography>
+            <Typography  className={classes.title} variant='h6' style={{color:"darkgrey",textTransform:"capitalize",fontFamily:"Montserrat"}}>
                       Get all the Info regarding your favorite Crypto Currency
-                  </Typography>
+            </Typography>
             </div>
             <Carousel/>
         </Container>

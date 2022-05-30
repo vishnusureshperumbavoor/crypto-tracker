@@ -1,8 +1,11 @@
 import React from 'react'
+import CoinInfo from '../CoinPage/CoinInfo'
 
 function CoinPage() {
   return (
-    <div>CoinPage</div>
+    <div>
+      <CoinInfo/>
+    </div>
   )
 }
 
